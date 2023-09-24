@@ -25,8 +25,6 @@ let option_container = document.querySelector(".option_container");
 let allField = [component, schemaId, schemaLabel, content, schemaDefault, maximum, minimum, step, unit, info ,preceding_comman, trailing_comman];
 let subFields = [content, schemaDefault, maximum, minimum, step, unit, limit, info, option_container];
 
-subFields.forEach(field=>field.parentElement.classList.add("hidden"))
-
 allField.forEach(input=>{
     input.addEventListener("change", ()=>{
         builder();

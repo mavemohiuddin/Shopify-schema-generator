@@ -1,6 +1,6 @@
 # Shopify-schema-generator
 
-Live page: <a href="https://mavemohiuddin.github.io/Shopify-schema-generator/">View Page</a>
+Live page: <a target="_blank" href="https://mavemohiuddin.github.io/Shopify-schema-generator/">View Page</a>
 
 This project will help you to generate Shopify Liquid Schema. The goal of this project is to assist you generating schema quicker and without manually writing them.
 
