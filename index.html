@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="index.js" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <title>Schema - Develoepr</title>
+</head>
+
+<body>
+    <div class="max-w-[1170px] mx-auto px-4 my-12 py-4 bg-gray-100 rounded">
+        <div class="flex gap-16">
+            <div class="form border-r pb-10 pr-16 border-black w-96">
+                <div class="flex flex-col gap-2 justify-evenly flex-1 pb-6 mb-6 border-b border-gray-500">
+                    <div class="flex gap-2">
+                        <p class="text-xl w-32 font-semibold">Component -</p>
+                        <select name="component" class="border border-black rounded px-2 py-px bg-white w-40">
+                            <option value="null"> Select </option>
+                            <option value="header"> Header </option>
+                            <option value="paragraph"> Paragraph </option>
+                            <option value="null"> -------- </option>
+                            <option value="text"> Text </option>
+                            <option value="richtext"> Rich text </option>
+                            <option value="textarea"> Text area </option>
+                            <option value="url"> URL </option>
+                            <option value="null"> -------- </option>
+                            <option value="select"> Select </option>
+                            <option value="radio"> Radio </option>
+                            <option value="range"> Range </option>
+                            <option value="checkbox"> Checkbox </option>
+                            <option value="null"> -------- </option>
+                            <option value="color"> Color </option>
+                            <option value="image_picker"> Image picker </option>
+                            <option value="video"> video </option>
+                            <option value="video_url"> video URL </option>
+                            <option value="color_background"> Color background </option>
+                            <option value="null"> -------- </option>
+                            <option value="link_list"> Link list </option>
+                            <option value="product"> Product </option>
+                            <option value="product_list"> Product list </option>
+                        </select>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-lg w-32 font-semibold"> Shema id -</p>
+                        <input type="text" name="schema_id" id="schema_id" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-lg w-32 font-semibold"> Schema Label -</p>
+                        <input type="text" name="schema_label" id="schema_label" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 justify-evenly flex-1 mt-6">
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Content -</p>
+                        <input type="text" name="content" id="content" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Default -</p>
+                        <input type="text" name="default" id="default" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Maximum -</p>
+                        <input type="text" name="max" id="max" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Minimum -</p>
+                        <input type="text" name="min" id="min" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Step -</p>
+                        <input type="text" name="step" id="step" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Unit -</p>
+                        <input type="text" name="unit" id="unit" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Limit -</p>
+                        <input type="text" pattern="[0-9]+" name="limit" id="limit" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="text-base w-32 font-semibold"> Info -</p>
+                        <input type="text" name="info" id="info" class="border border-black rounded bg-white px-2 py-px w-40">
+                    </div>
+                    <div class="">
+                        <p class="text-base w-32 font-semibold flex items-center justify-between w-full">Options - 
+                            <span class="adder font-bold bg-orange-300 h-6 w-6 rounded cursor-pointer inline-block flex justify-center">+</span>
+                        </p>
+                        <div class="option_container ml-6 mr-12"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 flex-1">
+                <div class="flex gap-12 mb-10">
+                    <label for="preceding_comman">
+                        <input id="preceding_comman" name="preceding_comman" type="checkbox"/>
+                        Add Preceding comma
+                    </label>
+                    <label for="trailing_comman">
+                        <input id="trailing_comman" name="trailing_comman" type="checkbox" />
+                        Add Trailing comma
+                    </label>
+                </div>
+                <p class="text-lg font-semibold">Output - <span class="copy px-2 py-1 bg-orange-200 rounded ml-10 cursor-pointer">Copy</span></p>
+                <p class="output mt-6">output</p>
+            </div>
+        </div>
+    </div>
+    <p class="message hidden absolute bottom-20 left-1/2 -translate-x-1/2 px-32 py-4 rounded bg-black bg-opacity-50 text-white font-semibold">Settings copied</p>
+</body>
+
+</html>
