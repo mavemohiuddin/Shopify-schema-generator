@@ -3,6 +3,7 @@ let output = document.querySelector(".output");
 let copy = document.querySelector(".copy");
 let adder = document.querySelector(".adder");
 let message = document.querySelector(".message");
+let reset = document.querySelector(".reset");
 
 let component = document.querySelector("[name='component']");
 let schemaId = document.querySelector("[name='schema_id']");
@@ -24,6 +25,8 @@ let option_container = document.querySelector(".option_container");
 let allField = [component, schemaId, schemaLabel, content, schemaDefault, maximum, minimum, step, unit, info ,preceding_comman, trailing_comman];
 let subFields = [content, schemaDefault, maximum, minimum, step, unit, limit, info, option_container];
 
+subFields.forEach(field=>field.parentElement.classList.add("hidden"))
+
 allField.forEach(input=>{
     input.addEventListener("change", ()=>{
         builder();
@@ -31,6 +34,7 @@ allField.forEach(input=>{
 })
 
 function updateField() {
+
     if (component.value == "header" || component.value == "paragraph") {
         subFields.forEach(item=>item.parentElement.classList.add("hidden"));
         [content, info].map(item=>item.parentElement.classList.remove("hidden"));
@@ -59,7 +63,12 @@ function write(value) {
 }
 function builder() {
     if (component.value == "null") {
+        subFields.forEach(field=>field.parentElement.classList.add("hidden"));
+        output.innerHTML = "Your output will be here!";
+        ["!bg-gray-500", "!cursor-not-allowed", "!text-white"].forEach(item=>copy.classList.add(item))
         return;
+    } else {
+        ["!bg-gray-500", "!cursor-not-allowed", "!text-white"].forEach(item=>copy.classList.remove(item))
     }
 
     updateField()
@@ -196,4 +205,13 @@ copy.addEventListener("click", ()=>{
         message.classList.remove("hidden");
         setTimeout(()=>message.classList.add("hidden"), 1500)
     }
+})
+
+reset.addEventListener("click", () => {
+    allField.forEach(field=>{
+        field.value = null;
+        output.innerHTML = "Your output will be here!";
+        subFields.forEach(elem=>elem.parentElement.classList.add("hidden"));
+        [preceding_comman, trailing_comman].forEach(elem=>elem.checked = false);
+    })
 })

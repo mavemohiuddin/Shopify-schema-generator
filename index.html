@@ -21,18 +21,18 @@
         }
     </script>
 
-    <title>Schema - Develoepr</title>
+    <title>Shopify Schema Dev</title>
 </head>
 
-<body>
-    <div class="max-w-[1170px] mx-auto px-4 my-12 py-4 bg-gray-100 rounded">
-        <div class="flex gap-16">
-            <div class="form border-r pb-10 pr-16 border-black w-96">
+<body class="h-screen py-12">
+    <div class="max-w-[1170px] w-full mx-auto px-6 py-12 bg-gray-100 rounded h-full">
+        <div class="flex gap-12">
+            <div class="form border-r pb-10 pr-12 border-black w-96">
                 <div class="flex flex-col gap-2 justify-evenly flex-1 pb-6 mb-6 border-b border-gray-500">
                     <div class="flex gap-2">
                         <p class="text-xl w-32 font-semibold">Component -</p>
                         <select name="component" class="border border-black rounded px-2 py-px bg-white w-40">
-                            <option value="null"> Select </option>
+                            <option value="null"> Component </option>
                             <option value="header"> Header </option>
                             <option value="paragraph"> Paragraph </option>
                             <option value="null"> -------- </option>
@@ -99,7 +99,7 @@
                         <p class="text-base w-32 font-semibold"> Info -</p>
                         <input type="text" name="info" id="info" class="border border-black rounded bg-white px-2 py-px w-40">
                     </div>
-                    <div class="">
+                    <div class="mt-2">
                         <p class="text-base w-32 font-semibold flex items-center justify-between w-full">Options - 
                             <span class="adder font-bold bg-orange-300 h-6 w-6 rounded cursor-pointer inline-block flex justify-center">+</span>
                         </p>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-12 flex-1">
+            <div class=" flex-1">
                 <div class="flex gap-12 mb-10">
                     <label for="preceding_comman">
                         <input id="preceding_comman" name="preceding_comman" type="checkbox"/>
@@ -117,9 +117,10 @@
                         <input id="trailing_comman" name="trailing_comman" type="checkbox" />
                         Add Trailing comma
                     </label>
+                    <button class="reset px-8 py-2 bg-orange-200 font-semibold rounded cursor-pointer">Reset</button>
                 </div>
-                <p class="text-lg font-semibold">Output - <span class="copy px-2 py-1 bg-orange-200 rounded ml-10 cursor-pointer">Copy</span></p>
-                <p class="output mt-6">output</p>
+                <p class="text-lg font-semibold">Output - <span class="copy px-2 py-1 bg-orange-200 rounded ml-10 cursor-pointer !bg-gray-500 !cursor-not-allowed !text-white">Copy</span></p>
+                <p class="output mt-6 p-4 border bg-white rounded border-gray-500">Your output will be here!</p>
             </div>
         </div>
     </div>
